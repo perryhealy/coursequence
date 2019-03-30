@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Coursequence</title>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="mvp.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="mvp.css">
+    </head>
+
+    <body>
+        <div>
+            <label for="major">Major: </label>
+            <select class="data" id="major" required>
+                
+            </select>
+            <br>
+            <label for="sems">Semesters Remaining: </label>
+            <input class="data" id="sems" type="number" name="sems" step="1" value="8" min="1" max="8" required>
+            <br>
+            <label for="specifics">Concentrations/Interests?</label>
+            <div id="specifics">
+                
+            </div>
+            <br>
+            <button id="start">Generate!</button>
+        </div>
+
+        <div id="con">
+            <table id="schedule">
+
+            </table>
+        </div>
+
+    </body>
+</html>
