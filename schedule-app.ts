@@ -1,5 +1,5 @@
-import { print } from "introcs";
-import { recs, elecs } from "./allcourses";
+import { print, promptNumber } from "introcs";
+import { recs, elecs, streams, firstyr, geneds } from "./allcourses";
 
 export class Course {
     credHrs: number;
@@ -7,12 +7,14 @@ export class Course {
     spring: boolean;
     fall: boolean;
     name: string;
-    constructor(spring: boolean, fall: boolean, credHrs: number, prereq: Course[], name: string) {
+    stem: number;
+    constructor(spring: boolean, fall: boolean, credHrs: number, prereq: Course[], name: string, stem: number) {
         this.name = name;
         this.spring = spring;
         this.fall = fall;
         this.credHrs = credHrs;
         this.prereq = prereq;
+        this.stem = stem;
     }
 }
 
@@ -23,6 +25,7 @@ export class Semester {
     credHrs: number = 0;
     prev: Semester | null;
     next: Semester | null;
+    stem: number = 0;
     courses: Set<Course> = new Set<Course>();
     constructor(spring: boolean, fall: boolean, num: number, prev?: Semester | null, next?: Semester | null) {
         this.spring = spring;
@@ -49,7 +52,7 @@ export class Semester {
             print("Semester" + this.num + " already has " + course.name);
             return false;
         }
-        if (course.credHrs + this.credHrs >= 18 || !(this.spring && course.spring || this.fall && course.fall)) {
+        if (course.credHrs + this.credHrs >= 18 || this.stem + course.stem > 3 || !(this.spring && course.spring || this.fall && course.fall)) {
             if (this.next !== null) {
                 print("Could not add this semester. Adding to semester " + (this.num + 1));
                 return this.next.add(course);
@@ -59,6 +62,7 @@ export class Semester {
             }
         } else {
             this.credHrs += course.credHrs;
+            this.stem += course.stem;
             this.courses.add(course);
             return true;
         }
@@ -66,6 +70,7 @@ export class Semester {
 }
 
 export let main = async () => {
+    let chosenStream = 0; // replace with button selection
     let s1: Semester = new Semester(false, true, 1, null);
     let s2: Semester = new Semester(true, false, 2, s1);
     let s3: Semester = new Semester(false, true, 3, s2);
@@ -80,11 +85,27 @@ export let main = async () => {
 
     let temp = shuffle(elecs);
     let chosenElecs: Course[] = [];
-    for (let i = 0; i < 5; i++) {
-        chosenElecs[chosenElecs.length] = temp[i];
+    if (chosenStream < 10) {
+        for (let i = 0; i < 5; i++) {
+            if (i < streams[chosenStream].length) {
+                chosenElecs[chosenElecs.length] = streams[chosenStream][i];
+            } else {
+                chosenElecs[chosenElecs.length] = temp[i - chosenElecs.length];
+            }
+        }
+    } else {
+        for (let i = 0; i < 5; i++) {
+            chosenElecs[chosenElecs.length] = temp[i];
+        }
     }
 
+    let temp2 = shuffle(geneds);
+
     s1 = addCourseList(s1, chosenElecs, s1);
+    s1 = addCourseList(s1, firstyr, s1);
+    s1 = addCourseList(s1, temp2, s1);
+
+
     print("------------");
     printSchedule(s1);
 
