@@ -2,6 +2,7 @@ body {
     background: plum;
     font-family: 'Acme';
     font-size: 22px;
+    text-align: center
 }
 
 .data {
@@ -10,16 +11,20 @@ body {
     font-family: 'Acme';
     font-size: 15px;
 }
+
+#email {
+    width: 40%;
+}
   
-#start {
-    background: #0084ff;
+button {
+    background:darkslateblue;
     border: none;
     border-radius: 5px;
     padding-right: 15px;
     padding-left: 15px;
     color: #f2f5f8;
     font-family: 'Acme';
-    font-size: 22px;
+    font-size: 20px;
 }
 
 table {
@@ -45,4 +50,17 @@ td {
 #con {
     padding: 20px;
     margin:0 auto;
+}
+
+.steps {
+    width: 40%;
+    background-color: #aa55aa;
+    border-radius: 15px;
+    float: left;
+    text-align: center
+}
+
+#arrow {
+    width: 20%;
+    background-color:plum;
 }
