@@ -24,11 +24,15 @@ button {
     padding-left: 15px;
     color: #f2f5f8;
     font-family: 'Acme';
-    font-size: 30px;
-    padding: 20px;
+    font-size: 20px;
 }
 
-input {
+#go {
+    padding: 20px;
+    font-size: 30px;
+}
+
+#sign {
     background:darkslateblue;
     border: none;
     border-radius: 5px;
