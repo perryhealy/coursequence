@@ -1,37 +1,51 @@
 <html>
-    <head>
-        <title>Coursequence</title>
-        <meta charset="UTF-8">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="mvp.js"></script>
-        <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
-        <link rel="stylesheet" type="text/css" href="mvp.css">
-    </head>
 
-    <body>
-        <h1>Welcome to Coursequence!</h1>
-        <h3>A cohesive course plan without the hassle</h3>
-        <div>
-            <div class="steps" id="one">
-                <h4>Step 1</h4>
-                <h6>Start by entering your major and any other interests</h6>
-            </div>
-            <img src="./a2.png" class="steps" id="arrow">
-            <div class="steps" id="two">
-                <h4>Step 2</h4>
-                <h6>Out comes a 4-year schedule that suits your needs!</h6>
-            </div>
+<head>
+    <title>Coursequence</title>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="mvp.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="mvp.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138046931-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138046931-1');
+    </script>
+
+</head>
+
+<body>
+    <h1>Welcome to Coursequence!</h1>
+    <h3>A cohesive course plan without the hassle</h3>
+    <div>
+        <div class="steps" id="one">
+            <h4>Step 1</h4>
+            <h6>Start by entering your major and any other interests</h6>
         </div>
-        <br><br><br><br><br><br>
-        
-        <div class="info">
-            <button id="go" onclick='window.location.href = "schedule_page.html";'>Get Started!</button>
-            <br><br><br><br>
-            <p> Want More?  We're adding more majors, more personalization, and more functionality!  Interested?
-                Sign up on our Launching Page for the latest in Coursequence anouncements and features:
-                </p>
-            <input id="sign" type="button" onclick='location.href = "http://coursequence.launchrock.com";' value="Subscribe"/>
-            
+        <img src="./a2.png" class="steps" id="arrow">
+        <div class="steps" id="two">
+            <h4>Step 2</h4>
+            <h6>Out comes a 4-year schedule that suits your needs!</h6>
         </div>
-    </body>
+    </div>
+    <br><br><br><br><br><br>
+
+    <div class="info">
+        <button id="go" onclick='window.location.href = "schedule_page.html";'>Get Started!</button>
+        <br><br><br><br>
+        <p> Want More? We're adding more majors, more personalization, and more functionality! Interested?
+            Sign up on our Launching Page for the latest in Coursequence anouncements and features:
+        </p>
+        <input id="sign" type="button" onclick='location.href = "http://coursequence.launchrock.com";'
+            value="Subscribe" />
+
+    </div>
+</body>
+
 </html>
