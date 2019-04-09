@@ -24,7 +24,22 @@ button {
     padding-left: 15px;
     color: #f2f5f8;
     font-family: 'Acme';
+    font-size: 30px;
+    padding: 20px;
+}
+
+input {
+    background:darkslateblue;
+    border: none;
+    border-radius: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: #f2f5f8;
+    font-family: 'Acme';
     font-size: 20px;
+    width: 40%;
+    float: center;
+    
 }
 
 table {
@@ -63,4 +78,11 @@ td {
 #arrow {
     width: 20%;
     background-color:plum;
+}
+
+p {
+    text-align: left;
+    padding-left: 30%;
+    width: 40%;
+    font-size: 20px;
 }
