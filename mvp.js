@@ -84,6 +84,11 @@ $(document).ready(function () {
 });
 
 let generate_schedule = () => {
+    // Analytics
+    gtag('event', "Generate", {
+        'event_category': "Schedule"
+    });
+
     let schedule = $("#con");
     schedule.empty();
     let semesters = form_schedule($("#sems").val());
