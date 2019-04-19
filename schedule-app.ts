@@ -70,7 +70,8 @@ export class Semester {
 }
 
 export let main = async () => {
-    let chosenStream = 0; // replace with button selection
+    // let chosenStream = 0; // replace with button selection
+    let chosenStream = await promptNumber("Do you hae an intended focus/stream? Type:" + "\n" + "0 for security" + "\n" + "1 for AI/Robotics" + "\n" + "2 for low-level concepts" + "\n" + "3 for math intensive courses" + "\n" + "4 for app development/web dev" + "\n" + "or 100 for no stream");
     let s1: Semester = new Semester(false, true, 1, null);
     let s2: Semester = new Semester(true, false, 2, s1);
     let s3: Semester = new Semester(false, true, 3, s2);
