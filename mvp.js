@@ -1,10 +1,11 @@
 class Course {
-    constructor(spring, fall, credHrs, prereq, name) {
+    constructor(spring, fall, credHrs, prereq, name, stem) {
         this.name = name;
         this.spring = spring;
         this.fall = fall;
         this.credHrs = credHrs;
         this.prereq = prereq;
+        this.stem = stem;
     }
 }
 
@@ -15,6 +16,7 @@ class Semester {
         this.num = num;
         this.courses = new Set();
         this.credHrs = 0;
+        this.stem = 0;
         if (prev != null) {
             this.prev = prev;
         }
@@ -35,7 +37,7 @@ class Semester {
                 // print("Semester" + this.num + " already has " + course.name);
                 return false;
             }
-            if (course.credHrs + this.credHrs >= 18 || !(this.spring && course.spring || this.fall && course.fall)) {
+            if (course.credHrs + this.credHrs >= 18 || this.stem + course.stem > 3 || !(this.spring && course.spring || this.fall && course.fall)) {
                 if (this.next !== null) {
                     // print("Could not add this semester. Adding to semester " + (this.num + 1));
                     return this.next.add(course);
@@ -45,6 +47,7 @@ class Semester {
                 }
             } else {
                 this.credHrs += course.credHrs;
+                this.stem += course.stem;
                 this.courses.add(course);
                 return true;
             }
