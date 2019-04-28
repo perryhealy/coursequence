@@ -69,6 +69,9 @@ let na = new Course(true, true, 3, [], "NA", 0);
 let wb = new Course(true, true, 3, [], "WB", 0);
 let bn = new Course(true, true, 3, [], "BN", 0);
 
+// make sure at least 120 hrs
+// summer school
+
 export let elecs: Course[] = [comp426, comp431, comp433, comp435, comp475, comp520, comp521, comp530, comp541, comp555, comp535, comp581, comp560, comp486, comp562];
 export let security: Course[] = [comp431, comp535];
 export let ai: Course[] = [comp581, comp560];
@@ -76,9 +79,9 @@ export let lowlevel: Course[] = [comp541, comp520, comp530, comp486];
 export let mathintensive: Course[] = [comp475, comp562];
 export let appdev: Course[] = [comp426, comp433];
 export let streams: Course[][] = [security, ai, lowlevel, mathintensive, appdev];
+
 export let firstyr: Course[] = [engl105, lfit, fl1, fl2, fl3];
 export let geneds: Course[] = [phys118, astr101, hs, hsss1, hsss2, vp, la, ph, ci, ee, gl, us, na, wb, bn];
-
 
 
 
